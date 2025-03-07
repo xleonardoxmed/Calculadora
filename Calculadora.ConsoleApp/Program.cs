@@ -38,6 +38,7 @@
                  resultado = primeiroNumero + segundoNumero;
             }
 
+
             else 
             {
                  resultado = primeiroNumero - segundoNumero;
