@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+            List<string> historico = new List<string>();
+
             //loop 0 - 1
             while (true)
             {
@@ -17,16 +19,18 @@
                 Console.WriteLine(" 3 - Multiplicar");
                 Console.WriteLine(" 4 - Dividir");
                 Console.WriteLine(" 5 - Tabuada");
-                Console.WriteLine(" 6 - Sair");
+                Console.WriteLine(" 6 - Histórico");
+                Console.WriteLine(" 7 - Sair");
 
                 Console.Write("\n Escolha uma Opção: ");
 
                 string opcao = Console.ReadLine().ToUpper(); // Maiúsculo
 
                 //Estrutura de decisão (se/senao)
-                if (opcao == "6")
+                if (opcao == "7")
                     break;
 
+                //tabuada
                 else if (opcao == "5")
                 {
                     Console.WriteLine("------------------------------");
@@ -46,34 +50,64 @@
                         Console.WriteLine($"{numeroTabuada} x {contador} = {resultadoTabuada}");
                     }
 
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("'Enter' para Continuar");
                     Console.ReadLine();
                     continue;
 
                 }
+                //lista
+                else if(opcao == "6")
+                {
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("Histórico");
+                    Console.WriteLine("------------------------------");
 
-                Console.Write(" Digite o Primeiro Número: ");
+                    if (historico.Count == 0)
+                        Console.WriteLine("Sem Dados.");
+                    else
+                        historico.ForEach(Console.WriteLine);
+
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("'Enter' para Continuar");
+                    Console.ReadLine();
+
+                    
+                    
+                    continue;
+
+
+                    
+                }
+
+                    Console.Write(" Digite o Primeiro Número: ");
                 string primeiroNumeroString = Console.ReadLine();
                 decimal primeiroNumero = Convert.ToDecimal(primeiroNumeroString); 
 
-                Console.Write(" Digite o Primeiro Número: ");
+                Console.Write(" Digite o Segundo Número: ");
                 string segundoNumeroString = Console.ReadLine();
                 decimal segundoNumero = Convert.ToDecimal(segundoNumeroString);
 
                 decimal resultado = 0;
 
+
                 if (opcao == "1")
                 {
                     resultado = primeiroNumero + segundoNumero;
+                    historico.Add($"{primeiroNumero} + {segundoNumero} = {resultado}");
+
                 }
 
                 if (opcao == "2")
                 {
                     resultado = primeiroNumero - segundoNumero;
+                    historico.Add($"{primeiroNumero} - {segundoNumero} = {resultado}");
                 }
 
                 if (opcao == "3")
                 {
                     resultado = primeiroNumero * segundoNumero;
+                    historico.Add($"{primeiroNumero} * {segundoNumero} = {resultado}");
                 }
 
                 else if (opcao == "4")
@@ -86,7 +120,8 @@
                         continue;
                     }
                     resultado = primeiroNumero / segundoNumero;
-
+                    historico.Add($"{primeiroNumero} / {segundoNumero} = {resultado}");
+                    
                 }
 
                 Console.WriteLine("------------------------------");
