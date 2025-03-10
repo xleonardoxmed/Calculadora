@@ -16,17 +16,40 @@
                 Console.WriteLine(" 2 - Subtrair");
                 Console.WriteLine(" 3 - Multiplicar");
                 Console.WriteLine(" 4 - Dividir");
-                Console.WriteLine(" 5 - Sair");
+                Console.WriteLine(" 5 - Tabuada");
+                Console.WriteLine(" 6 - Sair");
 
                 Console.Write("\n Escolha uma Opção: ");
 
                 string opcao = Console.ReadLine().ToUpper(); // Maiúsculo
 
                 //Estrutura de decisão (se/senao)
-                if (opcao == "5")
+                if (opcao == "6")
                     break;
 
+                else if (opcao == "5")
+                {
+                    Console.WriteLine("------------------------------");
+                    Console.WriteLine("Tabuada de Malandro");
+                    Console.WriteLine("------------------------------");
+                   
+                    //digita 1 número
+                    Console.Write("\nDigite o Número: ");
+                    int numeroTabuada = Convert.ToInt32(Console.ReadLine());
 
+                    //até o 10
+                    for(int contador = 1; contador <= 10; contador++) //++ ou +1
+                    {
+
+                        int resultadoTabuada = numeroTabuada * contador;
+                        
+                        Console.WriteLine($"{numeroTabuada} x {contador} = {resultadoTabuada}");
+                    }
+
+                    Console.ReadLine();
+                    continue;
+
+                }
 
                 Console.Write(" Digite o Primeiro Número: ");
                 string primeiroNumeroString = Console.ReadLine();
@@ -55,7 +78,15 @@
 
                 else if (opcao == "4")
                 {
+                  
+                    if (segundoNumero == 0)
+                    {
+                        Console.WriteLine("\nImpossível dividir por '0' INSIRA UMA OPÇÃO VÁLIDA.");
+                        Console.ReadLine();
+                        continue;
+                    }
                     resultado = primeiroNumero / segundoNumero;
+
                 }
 
                 Console.WriteLine("------------------------------");
