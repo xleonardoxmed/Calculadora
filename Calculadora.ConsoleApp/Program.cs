@@ -32,6 +32,7 @@
                 if (opcao == "7")
                 {
                     Console.WriteLine("\n Obrigado por usar!");
+                    Console.ReadLine();
                     break;
                 }
 
@@ -139,7 +140,8 @@
 
                 if (opcaoContinuar != "S")
                 {
-                    Console.WriteLine("\n Obrigado por usar!");
+                    Console.WriteLine("\n Obrigado por usar!", "'Enter' para encerrar");
+                    Console.ReadLine();
                     break;
                 }
             }
