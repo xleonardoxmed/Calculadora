@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            List<string> historico = new List<string>();
+
+            string[] historicoOperacoes = new string[100];
+            int contadorHistorico = 0;
 
             //loop 0 - 1
             while (true)
@@ -36,17 +38,17 @@
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("Tabuada de Malandro");
                     Console.WriteLine("------------------------------");
-                   
+
                     //digita 1 número
                     Console.Write("\nDigite o Número: ");
                     int numeroTabuada = Convert.ToInt32(Console.ReadLine());
 
                     //até o 10
-                    for(int contador = 1; contador <= 10; contador++) //++ ou +1
+                    for (int contador = 1; contador <= 10; contador++) //++ ou +1
                     {
 
                         int resultadoTabuada = numeroTabuada * contador;
-                        
+
                         Console.WriteLine($"{numeroTabuada} x {contador} = {resultadoTabuada}");
                     }
 
@@ -56,30 +58,31 @@
                     continue;
 
                 }
-                //lista
-                else if(opcao == "6")
+                //array
+                else if (opcao == "6")
                 {
                     Console.WriteLine("------------------------------");
                     Console.WriteLine("Histórico");
                     Console.WriteLine("------------------------------");
 
-                    if (historico.Count == 0)
-                        Console.WriteLine("Sem Dados.");
-                    else
-                        historico.ForEach(Console.WriteLine);
-
-                    Console.WriteLine("------------------------------");
-                    Console.WriteLine("'Enter' para Continuar");
+                    for (int contador = 0; contador < historicoOperacoes.Length; contador++)
+                    {
+                        string valorAtual = historicoOperacoes[contador];
+                        if (valorAtual != null)
+                        {
+                            Console.WriteLine(historicoOperacoes[contador]);
+                            Console.WriteLine("------------------------------");
+                            Console.WriteLine("'Enter' para Continuar");
+                           
+                        }
+                    }
                     Console.ReadLine();
-
-                    
-                    
                     continue;
 
 
                     
                 }
-
+                
                     Console.Write(" Digite o Primeiro Número: ");
                 string primeiroNumeroString = Console.ReadLine();
                 decimal primeiroNumero = Convert.ToDecimal(primeiroNumeroString); 
@@ -94,20 +97,20 @@
                 if (opcao == "1")
                 {
                     resultado = primeiroNumero + segundoNumero;
-                    historico.Add($"{primeiroNumero} + {segundoNumero} = {resultado}");
-
+                    historicoOperacoes[contadorHistorico] = ($"{primeiroNumero} + {segundoNumero} = {resultado}");
+                    
                 }
 
                 if (opcao == "2")
                 {
                     resultado = primeiroNumero - segundoNumero;
-                    historico.Add($"{primeiroNumero} - {segundoNumero} = {resultado}");
+                    historicoOperacoes[contadorHistorico] = ($"{primeiroNumero} - {segundoNumero} = {resultado}");
                 }
 
                 if (opcao == "3")
                 {
                     resultado = primeiroNumero * segundoNumero;
-                    historico.Add($"{primeiroNumero} * {segundoNumero} = {resultado}");
+                    historicoOperacoes[contadorHistorico] = ($"{primeiroNumero} * {segundoNumero} = {resultado}");
                 }
 
                 else if (opcao == "4")
@@ -120,9 +123,10 @@
                         continue;
                     }
                     resultado = primeiroNumero / segundoNumero;
-                    historico.Add($"{primeiroNumero} / {segundoNumero} = {resultado}");
+                    historicoOperacoes[contadorHistorico] = ($"{primeiroNumero} / {segundoNumero} = {resultado}");
                     
                 }
+                contadorHistorico += 1;
 
                 Console.WriteLine("------------------------------");
                 Console.WriteLine("\nResultado: " + resultado.ToString("F2")); // FloatingPoints = 2
