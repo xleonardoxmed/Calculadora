@@ -30,7 +30,10 @@
 
                 //Estrutura de decisão (se/senao)
                 if (opcao == "7")
+                {
+                    Console.WriteLine("\n Obrigado por usar!");
                     break;
+                }
 
                 //tabuada
                 else if (opcao == "5")
@@ -71,16 +74,16 @@
                         if (valorAtual != null)
                         {
                             Console.WriteLine(historicoOperacoes[contador]);
-                            Console.WriteLine("------------------------------");
-                            Console.WriteLine("'Enter' para Continuar");
-                           
+
+
                         }
                     }
+                    Console.WriteLine("\n'Enter' para Continuar");
                     Console.ReadLine();
                     continue;
 
 
-                    
+
                 }
                 
                     Console.Write(" Digite o Primeiro Número: ");
@@ -136,6 +139,7 @@
 
                 if (opcaoContinuar != "S")
                 {
+                    Console.WriteLine("\n Obrigado por usar!");
                     break;
                 }
             }
