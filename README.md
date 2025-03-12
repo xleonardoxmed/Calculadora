@@ -2,37 +2,37 @@
 
 ![](https://i.imgur.com/M0xOSnx.gif)
 
-## Introdução
+## IntroduÃ§Ã£o
 
-Uma calculadora de console que resolve os problemas com simplicidade e eficiência.
+Uma calculadora de console que resolve os problemas com simplicidade e eficiÃªncia.
 
 ## Funcionalidades
 
-- **Operações Básicas: Somas; Subtrações; Multiplicações e Divisões**
+- **OperaÃ§Ãµes BÃ¡sicas: Somas; SubtraÃ§Ãµes; MultiplicaÃ§Ãµes e DivisÃµes**
 - **Suporte a Decimais;**
-- **Validação de entrada;**
-- **Tratamento de divisão por Zero;**
-- **Histórico de Operações;**
+- **ValidaÃ§Ã£o de entrada;**
+- **Tratamento de divisÃ£o por Zero;**
+- **HistÃ³rico de OperaÃ§Ãµes;**
 
 ## Como Utilizar
 
-1. Clone o repositório.
+1. Clone o repositÃ³rio.
 ```
-	git clone https://github.com/xleonardoxmed/Calculadora.git
+git clone https://github.com/xleonardoxmed/Calculadora.git
 ```
-2. Abra o terminal ou prompt de comando e navegue até a pasta raiz.
+2. Abra o terminal ou prompt de comando e navegue atÃ© a pasta raiz.
 ```
-	cd Calculadora
+cd Calculadora
 ```
-4. Utilize o comando abaixo para restaurar as dependências do projeto.
+4. Utilize o comando abaixo para restaurar as dependÃªncias do projeto.
 ```
-	dotnet restore
+dotnet restore
 ```
-5. Navegue até a pasta do projeto.
+5. Navegue atÃ© a pasta do projeto.
 ```
-	cd Calculadora.ConsoleApp
+cd Calculadora.ConsoleApp
 ```
 6. Execute o projeto.
 ```
-	dotnet run
+dotnet run
 ```
